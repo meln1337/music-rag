@@ -4,11 +4,14 @@
 
 My RAG application specializes in music. More precisely, on some of the artist that I scrapped from [Genius website](https://genius.com/) and extracted info about artist and their most popular songs (maximum 100).
 
+All data is located in folder `data/txt`
+
 **Chunking:**
 
 I splitted my dataset in a such way. Let I scrapped $n$ songs of an artist. Then my spliiter will split each song as one chunk. And 1 more chunk for info about the artist. So we have $n+1$ chunks per artist ($n$ is limited to 100). The total number of chunks are 4500, because not every artist had at least 100 songs
 
 **Files:**
+- `data` - here we have nested folder "txt" where we have our datasource
 - `Dockerfile` - file to build docker image
 - `extract_embeddings_lchain.py` - code for extracting embeddings for my dataset and uploading into the vector DB
 - `parse_genius.py` - code of parsing [Genius](https://genius.com/) using `lyricsgenius` library
